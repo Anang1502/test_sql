@@ -1,0 +1,33 @@
+API for getting info on docs processed in a time range
+
+---
+tags:
+- Number of docs processed
+consumes:
+- multipart/form-data
+parameters:
+- name: BotID
+  key: BotID
+  in: formData
+  type: string
+  required: true
+  default: 289F295C-E115-4788-91F2-DDD0ECEC0C51
+  description: Unique BotID
+- name: StartDate
+  key: StartDate
+  in: formData
+  type: string
+  required: true
+  description: Start Date format - yyyy-mm-dd
+- name: EndDate
+  key: EndDate
+  in: formData
+  type: string
+  description: End Date format - yyyy-mm-dd
+produces:
+  application/vnd.ms-excel
+responses:
+  200:
+    description: File info saved successfully
+  500:
+    description: Internal server error
